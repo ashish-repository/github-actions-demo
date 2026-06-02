@@ -1,0 +1,22 @@
+name: My First Workflow
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    job-name-1:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Run single command
+              run: echo "This is step 1"
+
+            - name: Run multiple commands
+              run: |
+                  mkdir mydemo
+                  cd mydemo
+                  echo "This file is on runner VM" > mydemo.txt
+                  cat mydemo.txt
+                  echo "This is step 2"
